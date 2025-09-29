@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">RRP</string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="loading">Загрузка...</string>
+    <string name="radio_chart">Ревер-чарт</string>
+    <string name="radio_site">https://radiorever.com</string>
+    <string name="notification_title">RRP Radio Player</string>
+    <string name="notification_text">Воспроизведение в фоне</string>
+    <string name="default_track">Постпанк в эфире...</string>
+</resources>
