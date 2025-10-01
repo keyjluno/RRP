@@ -6,6 +6,8 @@
     <string name="loading">Загрузка...</string>
     <string name="radio_chart">Ревер-чарт</string>
     <string name="radio_site">https://radiorever.com</string>
+    <string name="vkontakte">ВКОНТАКТЕ</string>
+    <string name="telegram">Telegram</string>
     <string name="notification_title">RRP Radio Player</string>
     <string name="notification_text">Воспроизведение в фоне</string>
     <string name="default_track">Постпанк в эфире...</string>

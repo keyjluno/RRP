@@ -49,6 +49,10 @@ class MainActivity : AppCompatActivity() {
         trackNameView = findViewById(R.id.trackName)
         Log.d("RRP", "MainActivity: Элементы UI инициализированы")
 
+        // Активация marquee скроллинга для названия трека
+        trackNameView.isSelected = true
+        Log.d("RRP", "MainActivity: Marquee скроллинг активирован")
+
         // Стиль кнопки
         playButton.setTextColor(Color.WHITE)
         playButton.setTypeface(null, android.graphics.Typeface.BOLD)
@@ -81,6 +85,22 @@ class MainActivity : AppCompatActivity() {
         val linkMain = findViewById<TextView>(R.id.linkMain)
         linkMain.setOnClickListener {
             val url = "https://radiorever.com"
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            startActivity(intent)
+        }
+
+        // Клик по "ВКОНТАКТЕ"
+        val linkVK = findViewById<TextView>(R.id.linkVK)
+        linkVK.setOnClickListener {
+            val url = "https://vk.com/radiorever"
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            startActivity(intent)
+        }
+
+        // Клик по "Telegram"
+        val linkTelegram = findViewById<TextView>(R.id.linkTelegram)
+        linkTelegram.setOnClickListener {
+            val url = "https://t.me/postpunk_radio_rever"
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
             startActivity(intent)
         }
@@ -140,7 +160,13 @@ class MainActivity : AppCompatActivity() {
         Log.d("RRP", "updateTrackName вызван с: $trackName")
         runOnUiThread {
             Log.d("RRP", "Обновляем UI: trackNameView.text = $trackName")
+            // Используем чистый текст без пробелов для естественного marquee поведения
+            // Это позволит тексту плавно появляться справа буква за буквой
             trackNameView.text = trackName
+            // Перезапускаем marquee скроллинг для нового текста
+            trackNameView.isSelected = false
+            trackNameView.isSelected = true
+            Log.d("RRP", "Marquee обновлен с естественным циклом без искусственных пробелов")
         }
     }
 
